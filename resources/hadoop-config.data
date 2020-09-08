@@ -1,0 +1,1 @@
+fs.hdfs.impl=org.apache.hadoop.hdfs.DistributedFileSystem

@@ -1,0 +1,11 @@
+{
+	"pipe" : ["GetHdfsSandboxQuotaStep", "InsertDbSandboxQuotaStep"],
+	
+	"meta" : [
+	   {},
+	   {
+			"query": "insert_sand_quota_data",
+	    	"batch": "1000"
+       }
+	]
+}

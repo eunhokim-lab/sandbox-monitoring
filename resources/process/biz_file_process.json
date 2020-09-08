@@ -1,0 +1,11 @@
+{
+	"pipe" : ["GetHdfsBizAndFileInfoStep", "InsertDbBizAndFileStep"],
+	
+	"meta" : [
+	   {},
+	   {
+			"query": "insert_biz_file_data",
+	    	"batch": "1000"
+       }
+	]
+}

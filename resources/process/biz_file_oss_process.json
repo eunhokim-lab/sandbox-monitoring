@@ -1,0 +1,7 @@
+{
+	"pipe" : ["GetHdfsBizAndFileInfoStep"],
+	
+	"meta" : [
+	   {}
+	]
+}

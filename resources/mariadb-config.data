@@ -1,0 +1,12 @@
+username=root
+password=1234
+jdbcDriver=org.mariadb.jdbc.Driver
+dbRemoteURL=jdbc:mariadb://localhost:3306/test
+MaxActive=45
+MinIdle=4
+MaxWait=15000
+TimeBetweenEvictionRunsMillis=3600000
+MinEvictableIdleTimeMillis=1800000
+MaxIdle=45
+TestOnBorrow=true
+BatchSize=1000

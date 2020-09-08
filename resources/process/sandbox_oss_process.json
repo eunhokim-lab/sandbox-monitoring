@@ -1,0 +1,15 @@
+{
+	"pipe" : ["GetHdfsSandboxInfoStep", "GetTableUsageStep", "SummaryInfoStep"],
+	
+	"meta" : [
+	   {},
+       {
+			"query": "table_usage",
+			"convert" : {
+	    					"{@target_table}" : "base.bdi_meta_qone_his"
+	    		    	 },
+	    	"reltime": "1y"
+       },
+       {}
+	]
+}

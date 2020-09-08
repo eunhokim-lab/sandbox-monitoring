@@ -1,0 +1,1 @@
+INSERT INTO sandbox_quota_mnt_test (sb_nm, quota, space_cnsm, space_quota, oper_dt) VALUES (?, ?, ?, ?, ?)
