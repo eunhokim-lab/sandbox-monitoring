@@ -22,9 +22,9 @@ import com.shinhan.bdu.sandbox.util.StaticValues;
  * @dependency CmHandler (Cloudera manager API wrapper), Config DATA
  *
  */
-public class GetHdfsSandboxInfoStep implements Step<List<Map>, List<Map>> {
+public class GetHdfsSandboxDbInfoStep implements Step<List<Map>, List<Map>> {
 	private Map<String, String> config;
-	private final Logger logger = LoggerFactory.getLogger(GetHdfsSandboxInfoStep.class);
+	private final Logger logger = LoggerFactory.getLogger(GetHdfsSandboxDbInfoStep.class);
 	private ExceptionHandler eh = new ExceptionHandler();
 
 	private Map<String, String> makeHdfsParam(String op, String name) {
@@ -110,7 +110,7 @@ public class GetHdfsSandboxInfoStep implements Step<List<Map>, List<Map>> {
 				
 			}
 		} 
-		logger.info("***  hdfs info : get " + infoMaps.size() + " item's data");
+		logger.info("***  Sandbox DB info : get " + infoMaps.size() + " item's data");
 		return post(input, infoMaps);
 	}
 

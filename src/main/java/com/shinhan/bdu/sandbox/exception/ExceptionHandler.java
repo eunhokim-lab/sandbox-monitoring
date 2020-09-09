@@ -1,6 +1,10 @@
 package com.shinhan.bdu.sandbox.exception;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
+
 import org.slf4j.Logger;
+
 
 public class ExceptionHandler {
 	
@@ -18,4 +22,14 @@ public class ExceptionHandler {
 		String msg = String.format("%s ratio is too high to process. You needs to check about it.", info);
 		logger.warn(msg);
 	}
+	
+	
+	public static String getPrintStackTrace(Exception e) {
+        
+        StringWriter errors = new StringWriter();
+        e.printStackTrace(new PrintWriter(errors));
+         
+        return errors.toString();
+         
+    }
 }

@@ -1,5 +1,5 @@
 {
-	"pipe" : ["GetHdfsSandboxInfoStep", "GetTableUsageStep", "SummaryInfoStep", "InsertDbSandboxStep"],
+	"pipe" : ["GetHdfsSandboxDbInfoStep", "GetTableUsageStep", "SummaryInfoStep", "InsertDbSandboxStep"],
 	
 	"meta" : [
 	   {},

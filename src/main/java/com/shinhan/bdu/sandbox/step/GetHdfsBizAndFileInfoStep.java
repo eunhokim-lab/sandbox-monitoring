@@ -56,7 +56,7 @@ public class GetHdfsBizAndFileInfoStep implements Step<List<Map>, List<Map>> {
 			logger.warn(bizDbListUrl + " ::: " + bizDbListParams);
 		}
 		
-		// 1-2. GET Biz Database Info
+		// 1-2. GET Biz Database Info 
 		for(Map<String, String> bizDb : bizDbs) {
 			String dbName = bizDb.get("pathSuffix");
 			String tableInfoUrl = String.format(config.get("url.biz.info"), dbName);
@@ -90,7 +90,7 @@ public class GetHdfsBizAndFileInfoStep implements Step<List<Map>, List<Map>> {
 		
 		String othersFileinfoText = hc.get(othersFileInfoUrl, null, otherFileInfoParams);
 		Map<Map, Object> otherInfoMap =((Map<Map, Object>) JsonUtil.getMapFeomJsonString(othersFileinfoText)
-                											  .get("ContentSummary"));
+                											  	   .get("ContentSummary"));
 		if (otherInfoMap == null) {
 			logger.error(othersFileInfoUrl);
 		}

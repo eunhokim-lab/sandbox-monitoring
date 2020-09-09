@@ -12,6 +12,7 @@ import org.apache.hadoop.mapreduce.v2.LogParams;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.shinhan.bdu.sandbox.exception.ExceptionHandler;
 import com.shinhan.bdu.sandbox.step.GetHdfsBizAndFileInfoStep;
 import com.shinhan.bdu.sandbox.util.CollectionUtil;
 import com.shinhan.bdu.sandbox.util.FileUtil;
@@ -52,7 +53,7 @@ public class PipeProducer {
 		}
 		return pipe;
 		
-	}
+	} 
 	
 	public boolean runPipeLine(String processMetaFileName) {
 		Map<String, Object> process = getProcessMap(processMetaFileName);
@@ -80,7 +81,8 @@ public class PipeProducer {
 			/*
 			 * TODO ClassNotFoundException외 exception 세분화.
 			 */
-			logger.error("{}", ex.getMessage());
+			logger.error("{}", new ExceptionHandler().getPrintStackTrace(ex));
+			ex.printStackTrace();
 			return false;
 		}
 	}

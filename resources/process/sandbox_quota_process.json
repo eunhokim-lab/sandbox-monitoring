@@ -1,5 +1,5 @@
 {
-	"pipe" : ["GetHdfsSandboxQuotaStep", "InsertDbSandboxQuotaStep"],
+	"pipe" : ["GetHdfsSandboxDbQuotaStep", "InsertDbSandboxQuotaStep"],
 	
 	"meta" : [
 	   {},

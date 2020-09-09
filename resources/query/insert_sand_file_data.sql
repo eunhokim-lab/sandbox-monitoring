@@ -1,0 +1,1 @@
+INSERT INTO sandbox_file_mnt_test (sb_nm, use_sz, space_cnsm, space_quota, oper_dt) VALUES (?, ?, ?, ?, ?)

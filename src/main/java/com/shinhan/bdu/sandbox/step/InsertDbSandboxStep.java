@@ -80,6 +80,9 @@ public class InsertDbSandboxStep implements Step<List<Map>, List<Map>> {
 			
 			for(int i = 0; i < insertData.size(); i++){
 				ArrayList<String> row = insertData.get(i);
+				
+				System.out.println(row);
+				
 				pstmt.setString(1, row.get(0));
 				pstmt.setString(2, row.get(1));
 				for(int index = 2; index < row.size(); index++){
@@ -105,6 +108,7 @@ public class InsertDbSandboxStep implements Step<List<Map>, List<Map>> {
 				}
 				java.sql.Date sqlDate = new java.sql.Date(myDate.getTime());
 				pstmt.setDate(row.size()+1, sqlDate);
+				
                 pstmt.addBatch();
                 pstmt.clearParameters() ;
                  
@@ -113,7 +117,7 @@ public class InsertDbSandboxStep implements Step<List<Map>, List<Map>> {
                     pstmt.clearBatch();
                     connection.commit() ;
                 }
-            }
+            } 
             // 커밋되지 못한 나머지 구문에 대하여 커밋
             pstmt.executeBatch() ;
             connection.commit() ;

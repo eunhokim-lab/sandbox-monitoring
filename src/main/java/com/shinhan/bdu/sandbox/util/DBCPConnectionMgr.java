@@ -53,7 +53,7 @@ public class DBCPConnectionMgr {
                 instance = new DBCPConnectionMgr(type);
                 logger.info("DBManager initialize: {}", instance);
             }
-        } catch (Exception e) {
+        } catch (Exception e) { 
             e.printStackTrace();
         }
 

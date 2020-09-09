@@ -29,8 +29,8 @@ import com.shinhan.bdu.sandbox.util.DBCPConnectionMgr;
  * @dependency Origin Query + Dynamic Query, ImpalaConnection + DBCP
  *
  */
-public class InsertDbSandboxQuotaStep implements Step<List<Map>, List<Map>> {
-	private final Logger logger = LoggerFactory.getLogger(InsertDbSandboxQuotaStep.class);
+public class InsertDbSandboxFileStep implements Step<List<Map>, List<Map>> {
+	private final Logger logger = LoggerFactory.getLogger(InsertDbSandboxFileStep.class);
 	private String getInsertQuery(List<Map> input) {
 		String qry = (String) input.get(0).get("query");
 		return MetaReadUtil.getInstance().readSql(qry);
@@ -42,7 +42,7 @@ public class InsertDbSandboxQuotaStep implements Step<List<Map>, List<Map>> {
 		for(String key : preData.keySet()) {
 			ArrayList<String> rowData = new ArrayList<String>();
 			rowData.add(key); // sandbox name
-			rowData.add(preData.get(key).get("quota"));
+			rowData.add(preData.get(key).get("sizeUsed"));
 			rowData.add(preData.get(key).get("spaceConsumed"));
 			rowData.add(preData.get(key).get("spaceQuota"));
 			insertData.add(rowData);
@@ -59,13 +59,12 @@ public class InsertDbSandboxQuotaStep implements Step<List<Map>, List<Map>> {
 		logger.info("* connection : " + connection);
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		ResultSetMetaData rsmd; 
+		ResultSetMetaData rsmd;
 		try {
 			logger.info(" ** excuted query : " + query);
 			pstmt = connection.prepareStatement(query);
 			
 			for(int i = 0; i < insertData.size(); i++){
-				
 				ArrayList<String> row = insertData.get(i);
 				pstmt.setString(1, row.get(0));
 				for(int index = 1; index < row.size(); index++){
