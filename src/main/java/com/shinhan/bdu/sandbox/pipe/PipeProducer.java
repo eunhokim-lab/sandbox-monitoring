@@ -82,7 +82,6 @@ public class PipeProducer {
 			 * TODO ClassNotFoundException외 exception 세분화.
 			 */
 			logger.error("{}", new ExceptionHandler().getPrintStackTrace(ex));
-			ex.printStackTrace();
 			return false;
 		}
 	}

@@ -47,15 +47,11 @@ public class InsertDbSandboxStep implements Step<List<Map>, List<Map>> {
 			if(preData.get(key).size() < 3) {
 				rowData.add(preData.get(key).get("sizeUsed"));
 				rowData.add(preData.get(key).get("spaceConsumed"));
-				rowData.add(preData.get(key).get("spaceQuota"));
-				rowData.add(preData.get(key).get("nameSpaceQuota"));
 				rowData.add("0");
 				rowData.add(null);
 			} else {
 				rowData.add(preData.get(key).get("sizeUsed"));
 				rowData.add(preData.get(key).get("spaceConsumed"));
-				rowData.add(preData.get(key).get("spaceQuota"));
-				rowData.add(preData.get(key).get("nameSpaceQuota"));
 				rowData.add(preData.get(key).get("useCount"));
 				rowData.add(preData.get(key).get("lastDataUseTime"));
 			}
@@ -80,9 +76,6 @@ public class InsertDbSandboxStep implements Step<List<Map>, List<Map>> {
 			
 			for(int i = 0; i < insertData.size(); i++){
 				ArrayList<String> row = insertData.get(i);
-				
-				System.out.println(row);
-				
 				pstmt.setString(1, row.get(0));
 				pstmt.setString(2, row.get(1));
 				for(int index = 2; index < row.size(); index++){

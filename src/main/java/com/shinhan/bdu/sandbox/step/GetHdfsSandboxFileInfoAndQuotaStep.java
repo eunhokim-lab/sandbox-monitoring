@@ -37,18 +37,17 @@ public class GetHdfsSandboxFileInfoAndQuotaStep implements Step<List<Map>, List<
 	@Override
 	public List<Map> process(List<Map> input) throws StepException {
 		
-		List<Map<String, Map<String, String>>> infoMaps = new ArrayList<Map<String, Map<String, String>>>();
+		Map<String, Map<String, String>> infoMaps = new HashMap<String, Map<String, String>>();
 		config = MetaReadUtil.getInstance().readHdfsConfig();
 
 		CollectionUtil.loggingPrintMap("hdfs config", config, logger);
 
 		HttpClient hc = new HttpClient();
 		// 1. GET Sandbox List
-		String sandboxListUrl = config.get("url.sandbox.list");
-		Map<String, String> sandboxListParams = makeHdfsParam(config.get("op.sandbox.list")
-				                                            , config.get("user.sandbox.list"));
+		String sandboxListUrl = config.get("url.sandbox.file.list");
+		Map<String, String> sandboxListParams = makeHdfsParam(config.get("op.sandbox.file.list")
+				                                            , config.get("user.sandbox.file.list"));
 		String sandJsontext = hc.get(sandboxListUrl, null, sandboxListParams);
-		
 		@SuppressWarnings("unchecked")
 		List<Map<String, String>> sandboxes = (List<Map<String, String>>) ((Map<String, Object>) 
 													JsonUtil.getMapFeomJsonString(sandJsontext)
@@ -66,13 +65,13 @@ public class GetHdfsSandboxFileInfoAndQuotaStep implements Step<List<Map>, List<
 			String sandBoxName = sandbox.get("pathSuffix");
 			
 			
-			String fileInfoQuotaUrl = String.format(config.get("url.table.list"), sandBoxName);
-			Map<String, String> fileInfoQuotaParams = makeHdfsParam(config.get("op.table.list")
-					                                              , config.get("user.table.list"));
+			String fileInfoQuotaUrl = String.format(config.get("url.sandbox.file.detail.info"), sandBoxName);
+			Map<String, String> fileInfoQuotaParams = makeHdfsParam(config.get("op.sandbox.file.detail.info")
+					                                              , config.get("user.sandbox.file.detail.info"));
+			
 			String fileInfoJsontext = hc.get(fileInfoQuotaUrl, null, fileInfoQuotaParams);
 			Map<Map, Object> infoQuotaMap =((Map<Map, Object>) JsonUtil.getMapFeomJsonString(fileInfoJsontext)
 						                                               .get("ContentSummary"));
-			
 				
 			String sizeUsed = ""+infoQuotaMap.get("length");
 			String sizeDisk = ""+infoQuotaMap.get("spaceConsumed");
@@ -84,8 +83,7 @@ public class GetHdfsSandboxFileInfoAndQuotaStep implements Step<List<Map>, List<
 			rowContents.put("sizeUsed", sizeUsed);
 			rowContents.put("spaceConsumed", sizeDisk);
 			rowContents.put("spaceQuota", spaceQuota);
-			rowMap.put(key, rowContents);
-			infoMaps.add(rowMap);
+			infoMaps.put(key, rowContents);
 				
 		} 
 		logger.info("***  Sandbox File Info : get " + infoMaps.size() + " item's data");
