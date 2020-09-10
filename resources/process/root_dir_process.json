@@ -1,0 +1,11 @@
+{
+	"pipe" : ["GetHdfsRootDirInfoStep", "InsertDbRootDirStep"],
+	
+	"meta" : [
+	   {},
+	   {
+			"query": "insert_root_dir_data",
+	    	"batch": "1000"
+       }
+	]
+}

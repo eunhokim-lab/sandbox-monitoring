@@ -54,6 +54,9 @@ public class ProcessMain {
     	logger.info(" [ ****** RUN :  sandbox_file_process ] ");
     	PipeProducer.getInstance().runPipeLine("sandbox_file_process");
     	
+    	logger.info(" [ ****** RUN :  root_dir_process ] ");
+    	PipeProducer.getInstance().runPipeLine("root_dir_process");
+    	
     	
     	
     }

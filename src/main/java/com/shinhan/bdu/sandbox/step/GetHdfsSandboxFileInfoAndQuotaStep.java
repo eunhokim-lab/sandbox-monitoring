@@ -18,8 +18,8 @@ import com.shinhan.bdu.sandbox.util.MetaReadUtil;
 import com.shinhan.bdu.sandbox.util.StaticValues;
 /**
  * 
- * @desc HDFS directory information을 얻어내는 step
- * @dependency CmHandler (Cloudera manager API wrapper), Config DATA
+ * @desc HDFS directory (sandbox file quota) information을 얻어내는 step
+ * @dependency  webhdfs
  *
  */
 public class GetHdfsSandboxFileInfoAndQuotaStep implements Step<List<Map>, List<Map>> {

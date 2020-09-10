@@ -1,7 +1,7 @@
 username=minerva
 password=wjdqh12#
 jdbcDriver=com.cloudera.impala.jdbc41.Driver
-dbRemoteURL=jdbc:impala://172.23.254.182:21050/base;AuthMech=3;
+dbRemoteURL=jdbc:impala://172.19.11.70:21050/base;AuthMech=3;
 MaxActive=45
 MinIdle=4
 MaxWait=15000

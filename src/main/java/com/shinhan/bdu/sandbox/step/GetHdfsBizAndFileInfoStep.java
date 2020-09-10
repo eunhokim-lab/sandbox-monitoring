@@ -14,8 +14,8 @@ import com.shinhan.bdu.sandbox.util.JsonUtil;
 import com.shinhan.bdu.sandbox.util.MetaReadUtil;
 /**
  * 
- * @desc HDFS directory information을 얻어내는 step
- * @dependency CmHandler (Cloudera manager API wrapper), Config DATA
+ * @desc HDFS directory (biz dir, file) information을 얻어내는 step
+ * @dependency  webhdfs
  *
  */
 public class GetHdfsBizAndFileInfoStep implements Step<List<Map>, List<Map>> {

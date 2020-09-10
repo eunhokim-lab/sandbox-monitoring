@@ -1,7 +1,7 @@
-username=root
-password=1234
+username=minerva
+password=wjdqh12#
 jdbcDriver=org.mariadb.jdbc.Driver
-dbRemoteURL=jdbc:mariadb://localhost:3306/test
+dbRemoteURL=jdbc:mariadb://172.19.4.90:3306/monitor
 MaxActive=45
 MinIdle=4
 MaxWait=15000
