@@ -59,7 +59,6 @@ public class PipeProducer {
 		Map<String, Object> process = getProcessMap(processMetaFileName);
 		CollectionUtil.loggingPrintMap("Read Process Meta", process, logger);
 		
-		
 		try {
 			Pipeline pipeline = makePipeLine((List<String>)process.get("pipe"));
 			List<Map<String, Object>> out = (ArrayList<Map<String, Object>>) pipeline.execute(process.get("meta"));
@@ -71,7 +70,7 @@ public class PipeProducer {
 			Path path = Paths.get(file.getAbsolutePath());
 			Files.createDirectories(path.getParent());
 			if(file.exists()) {
-				logger.warn("%s is aleady exist, system Overwrite it.", outFileName);
+				logger.warn("{} is aleady exist, system Overwrite it.", outFileName);
 			} 
 			
 			JsonUtil.getJsonFileFromListMap(file, out);

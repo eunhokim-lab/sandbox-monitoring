@@ -45,7 +45,7 @@ public class FileUtil {
 		return lines;
 	}
 	
-	public void fileWrtie(String filePath, Object contents) {
+	public void fileWrite(String filePath, Object contents) {
 		Path input = Paths.get(filePath);
 		try (FileChannel channel = FileChannel.open(input, StandardOpenOption.WRITE
 														 , StandardOpenOption.CREATE)) {

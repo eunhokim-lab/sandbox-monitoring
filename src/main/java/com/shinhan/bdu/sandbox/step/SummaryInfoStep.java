@@ -34,7 +34,7 @@ public class SummaryInfoStep implements Step<List<Map>, List<Map>> {
 		}
 		return mergedOutput;
 	}
-	 
+	
 	private List<String> getTargetKeys(List<Map> input){
 		boolean first = true;
 		List<String> tagetKeys = null;
@@ -45,7 +45,9 @@ public class SummaryInfoStep implements Step<List<Map>, List<Map>> {
 					tagetKeys = CollectionUtil.getKeysWithMapList((List<Map>)step.get("output"));
 					first = false;
 					return tagetKeys;
-				}  
+				} else {
+					break;
+				}
 			}
 		}
 		
