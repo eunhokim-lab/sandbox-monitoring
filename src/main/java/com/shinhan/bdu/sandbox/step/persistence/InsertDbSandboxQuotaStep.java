@@ -1,4 +1,4 @@
-package com.shinhan.bdu.sandbox.step.data;
+package com.shinhan.bdu.sandbox.step.persistence;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -25,7 +25,6 @@ import com.shinhan.bdu.sandbox.db.DbHandler;
 import com.shinhan.bdu.sandbox.pipe.PipeProducer;
 import com.shinhan.bdu.sandbox.step.prd.InsertDbAccessStepImpl;
 import com.shinhan.bdu.sandbox.step.prd.Step;
-import com.shinhan.bdu.sandbox.step.prd.Step.StepException;
 import com.shinhan.bdu.sandbox.util.DBCPConnectionMgr;
 /**
  *  
@@ -33,8 +32,8 @@ import com.shinhan.bdu.sandbox.util.DBCPConnectionMgr;
  * @dependency Origin Query + Dynamic Query, ImpalaConnection + DBCP
  *
  */
-public class InsertDbSandboxFileStep extends InsertDbAccessStepImpl {
-	private final Logger logger = LoggerFactory.getLogger(InsertDbSandboxFileStep.class);
+public class InsertDbSandboxQuotaStep extends InsertDbAccessStepImpl {
+	private final Logger logger = LoggerFactory.getLogger(InsertDbSandboxQuotaStep.class);
 	
 	@Override
 	protected List<ArrayList<String>> getInsertDataFromPreSteps(List<Map> input) {
@@ -43,7 +42,7 @@ public class InsertDbSandboxFileStep extends InsertDbAccessStepImpl {
 		for(String key : preData.keySet()) {
 			ArrayList<String> rowData = new ArrayList<String>();
 			rowData.add(key); // sandbox name
-			rowData.add(preData.get(key).get("sizeUsed"));
+			rowData.add(preData.get(key).get("quota"));
 			rowData.add(preData.get(key).get("spaceConsumed"));
 			rowData.add(preData.get(key).get("spaceQuota"));
 			insertData.add(rowData);
@@ -69,7 +68,6 @@ public class InsertDbSandboxFileStep extends InsertDbAccessStepImpl {
 		logger.info("*** mariadb insert end");
 
 		return null;
-
 	}
 
 }

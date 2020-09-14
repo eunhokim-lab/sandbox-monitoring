@@ -1,4 +1,4 @@
-package com.shinhan.bdu.sandbox.step.data;
+package com.shinhan.bdu.sandbox.step.persistence;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,8 +22,10 @@ import com.shinhan.bdu.sandbox.util.MetaReadUtil;
 import com.shinhan.bdu.sandbox.util.QueryConverter;
 import com.shinhan.bdu.sandbox.util.StaticValues;
 import com.shinhan.bdu.sandbox.db.DbHandler;
+import com.shinhan.bdu.sandbox.pipe.PipeProducer;
 import com.shinhan.bdu.sandbox.step.prd.InsertDbAccessStepImpl;
 import com.shinhan.bdu.sandbox.step.prd.Step;
+import com.shinhan.bdu.sandbox.step.prd.Step.StepException;
 import com.shinhan.bdu.sandbox.util.DBCPConnectionMgr;
 /**
  *  
@@ -31,8 +33,8 @@ import com.shinhan.bdu.sandbox.util.DBCPConnectionMgr;
  * @dependency Origin Query + Dynamic Query, ImpalaConnection + DBCP
  *
  */
-public class InsertDbSandboxStep extends InsertDbAccessStepImpl {
-	private final Logger logger = LoggerFactory.getLogger(InsertDbSandboxStep.class);
+public class InsertDbSandboxFileStep extends InsertDbAccessStepImpl {
+	private final Logger logger = LoggerFactory.getLogger(InsertDbSandboxFileStep.class);
 	
 	@Override
 	protected List<ArrayList<String>> getInsertDataFromPreSteps(List<Map> input) {
@@ -40,25 +42,15 @@ public class InsertDbSandboxStep extends InsertDbAccessStepImpl {
 		List<ArrayList<String>> insertData = new ArrayList<ArrayList<String>>();
 		for(String key : preData.keySet()) {
 			ArrayList<String> rowData = new ArrayList<String>();
-			String[] keyArr = key.split(StaticValues.KEY_OFFSET);
-			rowData.add(keyArr[0]); // Sandbox
-			rowData.add(keyArr[1]); // Table
-			if(preData.get(key).size() < 3) {
-				rowData.add(preData.get(key).get("sizeUsed"));
-				rowData.add(preData.get(key).get("spaceConsumed"));
-				rowData.add("0");
-				rowData.add("");
-			} else {
-				rowData.add(preData.get(key).get("sizeUsed"));
-				rowData.add(preData.get(key).get("spaceConsumed"));
-				rowData.add(preData.get(key).get("useCount"));
-				rowData.add(preData.get(key).get("lastDataUseTime"));
-			}
+			rowData.add(key); // sandbox name
+			rowData.add(preData.get(key).get("sizeUsed"));
+			rowData.add(preData.get(key).get("spaceConsumed"));
+			rowData.add(preData.get(key).get("spaceQuota"));
 			insertData.add(rowData);
 		}
 		return insertData;
 	}
-	
+	 
 	@Override
 	public List<Map> logic(List<Map> input) throws StepException {
 		
@@ -75,8 +67,9 @@ public class InsertDbSandboxStep extends InsertDbAccessStepImpl {
         	dbh.freeDbIns();
         }
 		logger.info("*** mariadb insert end");
-		return null;
-	}
 
+		return null;
+
+	}
 
 }

@@ -76,8 +76,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="com.shinhan.bdu.sandbox.step.data.InsertDbRootDirStep" project="sandbox" 
-    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/data/InsertDbRootDirStep.java" binary="false" 
+  <class id="9" language="java" name="com.shinhan.bdu.sandbox.step.persistence.InsertDbRootDirStep" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/persistence/InsertDbRootDirStep.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="6137" y="124"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -86,8 +86,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="com.shinhan.bdu.sandbox.step.data.InsertDbSandboxFileStep" project="sandbox" 
-    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/data/InsertDbSandboxFileStep.java" binary="false" 
+  <class id="10" language="java" name="com.shinhan.bdu.sandbox.step.persistence.InsertDbSandboxFileStep" 
+    project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/persistence/InsertDbSandboxFileStep.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="5475" y="124"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -96,8 +97,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="com.shinhan.bdu.sandbox.step.data.InsertDbSandboxStep" project="sandbox" 
-    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/data/InsertDbSandboxStep.java" binary="false" 
+  <class id="11" language="java" name="com.shinhan.bdu.sandbox.step.persistence.InsertDbSandboxStep" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/persistence/InsertDbSandboxStep.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="5144" y="124"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -106,8 +107,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="com.shinhan.bdu.sandbox.step.data.InsertDbSandboxQuotaStep" project="sandbox" 
-    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/data/InsertDbSandboxQuotaStep.java" binary="false" 
+  <class id="12" language="java" name="com.shinhan.bdu.sandbox.step.persistence.InsertDbSandboxQuotaStep" 
+    project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/persistence/InsertDbSandboxQuotaStep.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="5806" y="124"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -116,9 +118,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="com.shinhan.bdu.sandbox.step.data.InsertDbBizAndFileStep" project="sandbox" 
-    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/data/InsertDbBizAndFileStep.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
+  <class id="13" language="java" name="com.shinhan.bdu.sandbox.step.persistence.InsertDbBizAndFileStep" 
+    project="sandbox" file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/persistence/InsertDbBizAndFileStep.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="4813" y="124"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
