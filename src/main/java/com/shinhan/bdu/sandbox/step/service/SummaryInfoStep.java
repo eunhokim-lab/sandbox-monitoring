@@ -14,6 +14,7 @@ import org.apache.commons.collections.MapUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.shinhan.bdu.sandbox.step.prd.CommonStepImpl;
 import com.shinhan.bdu.sandbox.step.prd.Step;
 import com.shinhan.bdu.sandbox.step.prd.Step.StepException;
 import com.shinhan.bdu.sandbox.util.CollectionUtil;
@@ -22,7 +23,7 @@ import com.shinhan.bdu.sandbox.util.CollectionUtil;
  * @desc HDFS directory info와 impala table 사용량을 summary & 구조/정규화
  *
  */
-public class SummaryInfoStep implements Step<List<Map>, List<Map>> {
+public class SummaryInfoStep extends CommonStepImpl {
 	private final Logger logger = LoggerFactory.getLogger(SummaryInfoStep.class);
 	
 	private List<Map<String, Map<String, String>>> getFinishedStepOuput(List<Map> input){
@@ -51,26 +52,15 @@ public class SummaryInfoStep implements Step<List<Map>, List<Map>> {
 				}
 			}
 		}
-		
 		return tagetKeys;
 	}
 	@Override
-	public List<Map> process(List<Map> input) throws StepException {
+	public Object logic(List<Map> input) throws StepException {
 		
 		Map<String, Map<String, String>> summary = CollectionUtil.mergeMapsValueLeftJoin(getFinishedStepOuput(input), 
 				                                                                         getTargetKeys(input));
 		logger.info("*** smry step : summurize table useage & hdfs capa " + summary.size() + " items.");
-		return post(input, summary);
-	}
-
-	public List<Map> post(List<Map> input, Object data) throws StepException {
-		if (data == null)
-			if(input.size() == 1) throw new NullPointerException();
-			else data = input.get(input.size()-1).get("output");
-		input.get(0).put("output", data);
-		input.get(0).put("status", "finish");
-		input.add(input.remove(0));
-		return input;
+		return summary;
 	}
 
 }

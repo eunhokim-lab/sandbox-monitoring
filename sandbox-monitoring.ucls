@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="com.shinhan.bdu.sandbox.db.DbHandler" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/db/DbHandler.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="443" width="451" x="3399" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.shinhan.bdu.sandbox.exception.ExceptionHandler" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/exception/ExceptionHandler.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="155" width="325" x="4806" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.shinhan.bdu.sandbox.hadoop.WebHdfsHandler" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/hadoop/WebHdfsHandler.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="191" width="395" x="1516" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.shinhan.bdu.sandbox.hadoop.HadoopHandler" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/hadoop/HadoopHandler.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="191" width="244" x="4522" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.shinhan.bdu.sandbox.http.HttpClient" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/http/HttpClient.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="191" width="352" x="687" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.shinhan.bdu.sandbox.pipe.ClassBuilder" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/pipe/ClassBuilder.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="119" width="167" x="4305" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.shinhan.bdu.sandbox.pipe.Pipeline" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/pipe/Pipeline.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="119" width="242" x="6135" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="com.shinhan.bdu.sandbox.pipe.PipeProducer" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/pipe/PipeProducer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="173" width="259" x="2798" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="com.shinhan.bdu.sandbox.step.persistence.InsertDbSandboxFileStep" 
+    project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/persistence/InsertDbSandboxFileStep.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="369" x="5551" y="910"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="com.shinhan.bdu.sandbox.step.persistence.InsertDbRootDirStep" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/persistence/InsertDbRootDirStep.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="369" x="4324" y="910"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="com.shinhan.bdu.sandbox.step.persistence.InsertDbSandboxStep" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/persistence/InsertDbSandboxStep.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="369" x="5142" y="910"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="com.shinhan.bdu.sandbox.step.persistence.InsertDbSandboxQuotaStep" 
+    project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/persistence/InsertDbSandboxQuotaStep.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="369" x="4733" y="910"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="com.shinhan.bdu.sandbox.step.persistence.InsertDbBizAndFileStep" 
+    project="sandbox" file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/persistence/InsertDbBizAndFileStep.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="137" width="369" x="3915" y="910"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="14" language="java" name="com.shinhan.bdu.sandbox.step.prd.Step" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/prd/Step.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="83" width="166" x="5669" y="520"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="15" language="java" name="com.shinhan.bdu.sandbox.step.prd.DbAccessStepImpl" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/prd/DbAccessStepImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="173" width="211" x="4733" y="520"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="com.shinhan.bdu.sandbox.step.prd.InsertDbAccessStepImpl" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/prd/InsertDbAccessStepImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="119" width="369" x="4733" y="733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="com.shinhan.bdu.sandbox.step.prd.Step.StepException" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/prd/Step.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="83" width="168" x="5142" y="733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="com.shinhan.bdu.sandbox.step.prd.StepImp" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/prd/StepImp.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="155" width="166" x="5929" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="com.shinhan.bdu.sandbox.step.prd.GetHdfsDataStepImpl" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/prd/GetHdfsDataStepImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="155" width="211" x="5929" y="520"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="com.shinhan.bdu.sandbox.step.service.GetHdfsSandboxDbInfoStep" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/service/GetHdfsSandboxDbInfoStep.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="119" width="213" x="5350" y="733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="com.shinhan.bdu.sandbox.step.service.GetHdfsRootDirInfoStep" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/service/GetHdfsRootDirInfoStep.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="119" width="186" x="6197" y="733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="com.shinhan.bdu.sandbox.step.service.GetHdfsBizAndFileInfoStep" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/service/GetHdfsBizAndFileInfoStep.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="119" width="207" x="6423" y="733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="com.shinhan.bdu.sandbox.step.service.GetHdfsSandboxFileInfoAndQuotaStep" 
+    project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/service/GetHdfsSandboxFileInfoAndQuotaStep.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="119" width="286" x="5603" y="733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="com.shinhan.bdu.sandbox.step.service.GetTableUsageStep" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/service/GetTableUsageStep.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="137" width="183" x="4510" y="733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="com.shinhan.bdu.sandbox.step.service.GetHdfsSandboxDbQuotaStep" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/service/GetHdfsSandboxDbQuotaStep.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="119" width="228" x="5929" y="733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="com.shinhan.bdu.sandbox.step.service.SummaryInfoStep" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/step/service/SummaryInfoStep.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="173" width="421" x="5468" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="com.shinhan.bdu.sandbox.util.DBCPConnectionMgr" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/util/DBCPConnectionMgr.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="389" width="365" x="3890" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="com.shinhan.bdu.sandbox.util.JsonUtil" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/util/JsonUtil.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="245" width="379" x="41" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="com.shinhan.bdu.sandbox.util.MetaReadUtil" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/util/MetaReadUtil.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="407" width="242" x="3107" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="com.shinhan.bdu.sandbox.util.RowDataParser" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/util/RowDataParser.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="137" width="397" x="1079" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="com.shinhan.bdu.sandbox.util.QueryConverter" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/util/QueryConverter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="371" width="247" x="5171" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="com.shinhan.bdu.sandbox.util.FileUtil" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/util/FileUtil.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="155" width="177" x="460" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="com.shinhan.bdu.sandbox.util.CollectionUtil" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/util/CollectionUtil.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="227" width="624" x="2134" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="com.shinhan.bdu.sandbox.util.StaticValues" project="sandbox" 
+    file="/sandbox/src/main/java/com/shinhan/bdu/sandbox/util/StaticValues.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="101" width="143" x="1951" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="35">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="36" name="instance"/>      
+      <multiplicity id="37" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="38">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <generalization id="39">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="15"/>  
+  </generalization>  
+  <association id="40">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="41" name="instance"/>      
+      <multiplicity id="42" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="43">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="17"/>  
+  </nesting>  
+  <generalization id="44">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <association id="45">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="46" name="current"/>      
+      <multiplicity id="47" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="48">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="14"/>  
+  </realization>  
+  <generalization id="49">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <generalization id="50">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <realization id="51">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="14"/>  
+  </realization>  
+  <generalization id="52">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="15"/>  
+  </generalization>  
+  <generalization id="53">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <generalization id="54">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="18"/>  
+  </generalization>  
+  <generalization id="55">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <generalization id="56">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <generalization id="57">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <association id="58">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="59" name="instance"/>      
+      <multiplicity id="60" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="61">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="62" name="instance"/>      
+      <multiplicity id="63" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="64">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="18"/>  
+  </generalization>  
+  <association id="65">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="66" name="instance"/>      
+      <multiplicity id="67" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="68">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <association id="69">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="70" name="instance"/>      
+      <multiplicity id="71" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="72">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
