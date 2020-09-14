@@ -1,4 +1,4 @@
-package com.shinhan.bdu.sandbox.step;
+package com.shinhan.bdu.sandbox.step.test;
 
 import java.util.HashMap;
 import java.util.List;
@@ -6,6 +6,7 @@ import java.util.Map;
 
 import com.shinhan.bdu.sandbox.hadoop.HadoopHandler;
 import com.shinhan.bdu.sandbox.http.HttpClient;
+import com.shinhan.bdu.sandbox.step.abstact.Step;
 import com.shinhan.bdu.sandbox.util.CollectionUtil;
 import com.shinhan.bdu.sandbox.util.JsonUtil;
 import com.shinhan.bdu.sandbox.util.MetaReadUtil;

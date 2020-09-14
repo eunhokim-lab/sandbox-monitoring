@@ -1,26 +1,29 @@
 package com.shinhan.bdu.sandbox.http;
 
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.shinhan.bdu.sandbox.exception.ExceptionHandler;
 
 
 public class HttpClient {
+	
+	private final Logger logger = LoggerFactory.getLogger(HttpClient.class);
 	
 	private String formatQueryParams(Map<String, String> params) {
       return params.entrySet().stream()
@@ -51,8 +54,8 @@ public class HttpClient {
 		        return body;
 		        
 		    }
-		} catch(Exception e) {
-		    e.printStackTrace();
+		} catch(Exception ex) {
+			logger.error(new ExceptionHandler().getPrintStackTrace(ex));
 		}
 		return null;
 	}
@@ -70,7 +73,7 @@ public class HttpClient {
 		try {
 			
 			if (jsonMessage == null) {
-				System.out.println("post body 정보가 없습니다.");
+				logger.error("post body 정보가 없습니다.");
 				throw new NullPointerException();
 			}
 			
@@ -94,8 +97,8 @@ public class HttpClient {
 		        String body = handler.handleResponse(response);
 		        return body;
 		    }
-		} catch(Exception e) {
-		    e.printStackTrace();
+		} catch(Exception ex) {
+			logger.error(new ExceptionHandler().getPrintStackTrace(ex));
 		}
 		return null;
 	}

@@ -1,4 +1,4 @@
-package com.shinhan.bdu.sandbox.step;
+package com.shinhan.bdu.sandbox.step.service;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,7 +17,10 @@ import org.slf4j.LoggerFactory;
 import com.shinhan.bdu.sandbox.util.MetaReadUtil;
 import com.shinhan.bdu.sandbox.util.QueryConverter;
 import com.shinhan.bdu.sandbox.util.StaticValues;
+import com.shinhan.bdu.sandbox.db.DbHandler;
+import com.shinhan.bdu.sandbox.exception.ExceptionHandler;
 import com.shinhan.bdu.sandbox.pipe.PipeProducer;
+import com.shinhan.bdu.sandbox.step.abstact.DbAccessStepImpl;
 import com.shinhan.bdu.sandbox.util.DBCPConnectionMgr;
 /**
  *  
@@ -25,11 +28,12 @@ import com.shinhan.bdu.sandbox.util.DBCPConnectionMgr;
  * @dependency Origin Query + Dynamic Query, ImpalaConnection + DBCP
  *
  */
-public class GetTableUsageStep implements Step<List<Map>, List<Map>> {
+public class GetTableUsageStep extends DbAccessStepImpl {
 	
 	private final Logger logger = LoggerFactory.getLogger(PipeProducer.class);
 	
-	private String getQuery(List<Map> input) throws NullPointerException{
+	@Override
+	protected String getQuery(List<Map> input) throws NullPointerException{
 		String qry = (String) input.get(0).get("query");
 		String originQuery = MetaReadUtil.getInstance().readSql(qry);
 		String reltime = (String) input.get(0).get("reltime");
@@ -40,48 +44,30 @@ public class GetTableUsageStep implements Step<List<Map>, List<Map>> {
 	}
 	
 	@Override
-	public List<Map> process(List<Map> input) throws StepException {
+	public Object logic(List<Map> input) throws StepException {
 		
 		List<Map<String, Map<String, String>>> usageMaps = new ArrayList<Map<String, Map<String, String>>>();
-		
+		DbHandler dbh = new DbHandler("impala");
 		String query = this.getQuery(input);
-		Connection connection = DBCPConnectionMgr.getInstance("impala").getConnection();
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		ResultSetMetaData rsmd;
-		try {
-			logger.info(" *** excuted query : {} ",  query);
-			pstmt = connection.prepareStatement(query);
-		    rs = pstmt.executeQuery();
-
-            while (rs.next()) {
-        		Map<String, Map<String, String>> rowMap = new HashMap<String, Map<String, String>>();
+        try {
+        	ResultSet rs = dbh.readData(query);
+			while (rs.next()) {
+				Map<String, Map<String, String>> rowMap = new HashMap<String, Map<String, String>>();
 				String key = rs.getObject("sb_nm").toString() + StaticValues.KEY_OFFSET + rs.getObject("tbl_nm").toString();
 				Map<String, String> rowContents = new HashMap<String, String>();
 				rowContents.put("useCount", rs.getObject("cnt").toString());
 				rowContents.put("lastDataUseTime", rs.getObject("last_dttm").toString());
 				rowMap.put(key, rowContents);
 				usageMaps.add(rowMap);
-				
-            }
-            
-        } catch (SQLException ex) {
-            logger.error("{}", ex.getMessage());
-        } finally {
-            // 매우 중요! Connection을 사용하고 반납을 해야 Pooling이 된다.
-        	DBCPConnectionMgr.getInstance("impala").freeConnection(connection, pstmt, rs);
-        }
-		
+			}
+		} catch (SQLException ex) {
+			logger.error("{}", new ExceptionHandler().getPrintStackTrace(ex));
+		} finally {
+			 dbh.freeDbIns();
+	    }
 		
 		logger.info("*** table usage : get " + usageMaps.size() + " item's data");
-		return post(input, usageMaps) ;
-	}
-
-	public List<Map> post(List<Map> input, Object data) throws StepException {
-		input.get(0).put("output", data); 
-		input.get(0).put("status", "finish"); 
-		input.add(input.remove(0));
-		return input;
+		return usageMaps ;
 	}
 
 }

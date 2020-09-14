@@ -1,4 +1,4 @@
-package com.shinhan.bdu.sandbox.step;
+package com.shinhan.bdu.sandbox.step.service;
 
 import java.util.ArrayList;
 
@@ -14,7 +14,8 @@ import org.apache.commons.collections.MapUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.shinhan.bdu.sandbox.step.Step.StepException;
+import com.shinhan.bdu.sandbox.step.abstact.Step;
+import com.shinhan.bdu.sandbox.step.abstact.Step.StepException;
 import com.shinhan.bdu.sandbox.util.CollectionUtil;
 /**
  * 
@@ -63,6 +64,9 @@ public class SummaryInfoStep implements Step<List<Map>, List<Map>> {
 	}
 
 	public List<Map> post(List<Map> input, Object data) throws StepException {
+		if (data == null)
+			if(input.size() == 1) throw new NullPointerException();
+			else data = input.get(input.size()-1).get("output");
 		input.get(0).put("output", data);
 		input.get(0).put("status", "finish");
 		input.add(input.remove(0));

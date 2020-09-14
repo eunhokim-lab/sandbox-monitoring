@@ -7,15 +7,26 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.fs.QuotaUsage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import com.shinhan.bdu.sandbox.exception.ExceptionHandler;
 import com.shinhan.bdu.sandbox.util.MetaReadUtil;
 public class HadoopHandler {
 	
+	private final Logger logger = LoggerFactory.getLogger(HadoopHandler.class);
 	
     Configuration hdfsConfig = null;
     Path tirPath = null;
     Map<String, String> config = null;
-	
+    
+    private void assertInputParamsNull(Object rtn, Path hdfsDir) {
+		if (rtn == null) {
+			logger.error("Path{}'s is null] ", hdfsDir);
+			throw new NullPointerException();
+		}
+	}
+    
     public HadoopHandler() {
     	config = MetaReadUtil.getInstance().readHadoopConfig();
     	hdfsConfig = new Configuration();
@@ -33,10 +44,12 @@ public class HadoopHandler {
     	Path hdfsDir = new Path(path);
     	try {
 			FileSystem fs = hdfsDir.getFileSystem(hdfsConfig);
-			return fs.getQuotaUsage(hdfsDir);
+			QuotaUsage quotaUsage = fs.getQuotaUsage(hdfsDir);
+			assertInputParamsNull(quotaUsage, hdfsDir);
+			return quotaUsage;
 			
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (IOException ex) {
+			logger.error("{}", new ExceptionHandler().getPrintStackTrace(ex));
 		}
 		return null;
     }

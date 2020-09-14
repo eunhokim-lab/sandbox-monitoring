@@ -2,7 +2,7 @@ package com.shinhan.bdu.sandbox.pipe;
 
 import java.lang.reflect.InvocationTargetException;
 
-import com.shinhan.bdu.sandbox.step.Step;
+import com.shinhan.bdu.sandbox.step.abstact.Step;
 
 public class ClassBuilder {
 	

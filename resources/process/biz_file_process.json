@@ -5,7 +5,8 @@
 	   {},
 	   {
 			"query": "insert_biz_file_data",
-	    	"batch": "1000"
+	    	"batch": "1000",
+	    	"metas": ["string", "string", "long", "long", "date"]
        }
 	]
 }

@@ -13,7 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.shinhan.bdu.sandbox.exception.ExceptionHandler;
-import com.shinhan.bdu.sandbox.step.GetHdfsBizAndFileInfoStep;
+import com.shinhan.bdu.sandbox.step.service.GetHdfsBizAndFileInfoStep;
 import com.shinhan.bdu.sandbox.util.CollectionUtil;
 import com.shinhan.bdu.sandbox.util.FileUtil;
 import com.shinhan.bdu.sandbox.util.JsonUtil;

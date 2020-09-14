@@ -1,6 +1,6 @@
 package com.shinhan.bdu.sandbox.pipe;
 
-import com.shinhan.bdu.sandbox.step.Step;
+import com.shinhan.bdu.sandbox.step.abstact.Step;
 /**
  *  
  * @desc Workflow Pipelining builder

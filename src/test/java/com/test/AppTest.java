@@ -1,4 +1,4 @@
-package com.impala.udf.teradataudf;
+package com.test;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

@@ -17,9 +17,9 @@ import com.shinhan.bdu.sandbox.http.HttpClient;
 import com.shinhan.bdu.sandbox.pipe.ClassBuilder;
 import com.shinhan.bdu.sandbox.pipe.PipeProducer;
 import com.shinhan.bdu.sandbox.pipe.Pipeline;
-import com.shinhan.bdu.sandbox.step.GetHdfsSandboxDbInfoStep;
-import com.shinhan.bdu.sandbox.step.GetTableUsageStep;
-import com.shinhan.bdu.sandbox.step.Step;
+import com.shinhan.bdu.sandbox.step.abstact.Step;
+import com.shinhan.bdu.sandbox.step.service.GetHdfsSandboxDbInfoStep;
+import com.shinhan.bdu.sandbox.step.service.GetTableUsageStep;
 public class ProcessMain {
 	
 	private final static Logger logger = LoggerFactory.getLogger(ProcessMain.class);
@@ -42,6 +42,8 @@ public class ProcessMain {
     	PipeProducer.getInstance().runPipeLine("sandbox_file_oss_process");
     	*/
     	
+    	
+    	/*
     	logger.info(" [ ****** RUN : sandbox_process ]");
     	PipeProducer.getInstance().runPipeLine("sandbox_process");
     	
@@ -56,7 +58,23 @@ public class ProcessMain {
     	
     	logger.info(" [ ****** RUN :  root_dir_process ] ");
     	PipeProducer.getInstance().runPipeLine("root_dir_process");
+    	*/
     	
+    	
+    	logger.info(" [ ****** RUN : sandbox_process ]");
+    	PipeProducer.getInstance().runPipeLine("sandbox_process");
+    	
+    	logger.info(" [ ****** RUN :  biz_file_process ] ");
+    	PipeProducer.getInstance().runPipeLine("biz_file_process");
+    	
+    	logger.info(" [ ****** RUN :  sandbox_quota_process ] ");
+    	PipeProducer.getInstance().runPipeLine("sandbox_quota_process");
+    	
+    	logger.info(" [ ****** RUN :  sandbox_file_process ] ");
+    	PipeProducer.getInstance().runPipeLine("sandbox_file_process");
+    	
+    	logger.info(" [ ****** RUN :  root_dir_process ] ");
+    	PipeProducer.getInstance().runPipeLine("root_dir_process");
     	
     	
     }

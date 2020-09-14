@@ -90,7 +90,6 @@ public class JsonUtil {
 		Map<String, Object> map = null;
 
 		try {
-
 			map = new ObjectMapper().readValue(jsonObj.toJSONString(), Map.class);
 
 		} catch (JsonParseException e) {
