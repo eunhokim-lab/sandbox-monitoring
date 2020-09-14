@@ -22,8 +22,8 @@ import com.shinhan.bdu.sandbox.util.MetaReadUtil;
 import com.shinhan.bdu.sandbox.util.QueryConverter;
 import com.shinhan.bdu.sandbox.util.StaticValues;
 import com.shinhan.bdu.sandbox.db.DbHandler;
-import com.shinhan.bdu.sandbox.step.abstact.InsertDbAccessStepImpl;
-import com.shinhan.bdu.sandbox.step.abstact.Step;
+import com.shinhan.bdu.sandbox.step.prd.InsertDbAccessStepImpl;
+import com.shinhan.bdu.sandbox.step.prd.Step;
 import com.shinhan.bdu.sandbox.util.DBCPConnectionMgr;
 /**
  *  

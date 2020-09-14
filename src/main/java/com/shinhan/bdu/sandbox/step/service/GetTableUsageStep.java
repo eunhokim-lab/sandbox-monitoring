@@ -20,7 +20,7 @@ import com.shinhan.bdu.sandbox.util.StaticValues;
 import com.shinhan.bdu.sandbox.db.DbHandler;
 import com.shinhan.bdu.sandbox.exception.ExceptionHandler;
 import com.shinhan.bdu.sandbox.pipe.PipeProducer;
-import com.shinhan.bdu.sandbox.step.abstact.DbAccessStepImpl;
+import com.shinhan.bdu.sandbox.step.prd.DbAccessStepImpl;
 import com.shinhan.bdu.sandbox.util.DBCPConnectionMgr;
 /**
  *  

@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import com.shinhan.bdu.sandbox.exception.ExceptionHandler;
 import com.shinhan.bdu.sandbox.hadoop.WebHdfsHandler;
 import com.shinhan.bdu.sandbox.http.HttpClient;
-import com.shinhan.bdu.sandbox.step.abstact.GetHdfsDataStepImpl;
+import com.shinhan.bdu.sandbox.step.prd.GetHdfsDataStepImpl;
 import com.shinhan.bdu.sandbox.util.CollectionUtil;
 import com.shinhan.bdu.sandbox.util.JsonUtil;
 import com.shinhan.bdu.sandbox.util.MetaReadUtil;

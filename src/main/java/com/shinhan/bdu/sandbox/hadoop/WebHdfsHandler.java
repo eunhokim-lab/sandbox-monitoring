@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.shinhan.bdu.sandbox.http.HttpClient;
-import com.shinhan.bdu.sandbox.step.abstact.GetHdfsDataStepImpl;
+import com.shinhan.bdu.sandbox.step.prd.GetHdfsDataStepImpl;
 import com.shinhan.bdu.sandbox.util.JsonUtil;
 public class WebHdfsHandler {
 	

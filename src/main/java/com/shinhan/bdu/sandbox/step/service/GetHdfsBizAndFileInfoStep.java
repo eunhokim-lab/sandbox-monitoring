@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.shinhan.bdu.sandbox.hadoop.WebHdfsHandler;
-import com.shinhan.bdu.sandbox.step.abstact.GetHdfsDataStepImpl;
+import com.shinhan.bdu.sandbox.step.prd.GetHdfsDataStepImpl;
 import com.shinhan.bdu.sandbox.util.CollectionUtil;
 import com.shinhan.bdu.sandbox.util.RowDataParser;
 /**

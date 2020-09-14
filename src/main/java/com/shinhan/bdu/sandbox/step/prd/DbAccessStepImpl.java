@@ -1,19 +1,22 @@
-package com.shinhan.bdu.sandbox.step.abstact;
+package com.shinhan.bdu.sandbox.step.prd;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.shinhan.bdu.sandbox.step.abstact.Step.StepException;
+import com.shinhan.bdu.sandbox.step.prd.Step.StepException;
 import com.shinhan.bdu.sandbox.util.CollectionUtil;
 import com.shinhan.bdu.sandbox.util.MetaReadUtil;
 
-public abstract class GetHdfsDataStepImpl extends StepImp<List<Map>, List<Map>>{
+public abstract class DbAccessStepImpl extends StepImp<List<Map>, List<Map>>{
 	
-	private final Logger logger = LoggerFactory.getLogger(GetHdfsDataStepImpl.class);
+	private final Logger logger = LoggerFactory.getLogger(DbAccessStepImpl.class);
 	protected Map<String, String> config = null;
+	
+	protected abstract String getQuery(List<Map> input);
 	
 	@Override
 	protected void before(List<Map> input) throws StepException {

@@ -17,7 +17,7 @@ import com.shinhan.bdu.sandbox.http.HttpClient;
 import com.shinhan.bdu.sandbox.pipe.ClassBuilder;
 import com.shinhan.bdu.sandbox.pipe.PipeProducer;
 import com.shinhan.bdu.sandbox.pipe.Pipeline;
-import com.shinhan.bdu.sandbox.step.abstact.Step;
+import com.shinhan.bdu.sandbox.step.prd.Step;
 import com.shinhan.bdu.sandbox.step.service.GetHdfsSandboxDbInfoStep;
 import com.shinhan.bdu.sandbox.step.service.GetTableUsageStep;
 public class ProcessMain {
