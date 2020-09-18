@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
@@ -12,12 +13,19 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.tools.ant.launch.Launcher;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.shinhan.bdu.sandbox.ProcessMain;
+import com.shinhan.bdu.sandbox.exception.ExceptionHandler;
 /**
  * 
  * @desc Util Class for read config, sql and pipeline meta.
  *
  */
 public class MetaReadUtil {
+	private final static Logger logger = LoggerFactory.getLogger(MetaReadUtil.class);
+	
 	private static  MetaReadUtil instance = null;
 	private static final String RESOURCE_DIR = "resources";
 	private static final String IMPALA_CONFIG_FILE_URI = "impala-config.data";
@@ -64,10 +72,27 @@ public class MetaReadUtil {
 		return readConfig(this.BASIC_CONFIG_FILE_URI);
 	}
 	
+	private static String getProjectPath() {
+		String dir = null;
+		try {
+			dir = ProcessMain.class.getProtectionDomain()
+					                         .getCodeSource()
+					                         .getLocation().toURI()
+					                         .getPath();
+			dir = dir.split("sandbox/")[0].replaceAll(new java.io.File(dir).getName(), "");
+					             			
+					                         
+			
+		} catch (URISyntaxException ex) {
+			logger.error("{}", new ExceptionHandler().getPrintStackTrace(ex));
+		}
+		return dir;
+	}
+	
 	@SuppressWarnings("static-access")
 	public Map<String, String> readConfig(String configType) {
 		Map<String, String> map = new HashMap<String, String>();
-		String targetPath = Paths.get(RESOURCE_DIR, configType).toString();
+		String targetPath = Paths.get(getProjectPath(), RESOURCE_DIR, configType).toString();
 		for ( String line : FileUtil.getInstance().fileRead(targetPath)) {
 			String key = line.substring(0, line.indexOf("="));
 			String value = line.substring(line.indexOf("=")+1);
@@ -79,7 +104,7 @@ public class MetaReadUtil {
 	
 	private static String readFile(String path) {
 		StringBuffer sb = new StringBuffer();
-		String targetPath = Paths.get(RESOURCE_DIR, path).toString();
+		String targetPath = Paths.get(getProjectPath(), RESOURCE_DIR, path).toString();
 		for (String line : FileUtil.getInstance().fileRead(targetPath)) {
 			sb.append(line + '\n');
 		}
@@ -94,6 +119,5 @@ public class MetaReadUtil {
 	public static String readJsonFile(String prcsFn) {
 		return readFile((Paths.get(PRCS_DIR_PATH, (prcsFn + ".json"))).toString());
 	}
-	
 
 }

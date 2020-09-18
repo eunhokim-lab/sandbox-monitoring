@@ -10,3 +10,6 @@ MinEvictableIdleTimeMillis=1800000
 MaxIdle=45
 TestOnBorrow=true
 BatchSize=1000
+
+
+

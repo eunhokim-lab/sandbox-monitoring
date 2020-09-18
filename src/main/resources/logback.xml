@@ -2,7 +2,7 @@
 <configuration>
 
 	<!-- 변수 지정 -->
-	<property name="LOG_DIR" value="./logs" />
+	<property name="LOG_DIR" value="/shblog" />
 	<property name="LOG_PATH_NAME"
 		value="${LOG_DIR}/sandbox-monitoring.log" />
 

@@ -10,3 +10,6 @@ SELECT ownr_nm AS sb_nm
    AND crud = 'R'
  GROUP BY 1,2
  ORDER BY sb_nm, tbl_id
+ 
+ 
+ 
