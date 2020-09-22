@@ -10,14 +10,14 @@ public class RowDataParser {
 	public Map<String, String> genInfoStepRowData(Map<Map, Object> dataMap) {
 		Map<String, String> rowContents = new HashMap<String, String>();
 		rowContents.put("sizeUsed", ""+dataMap.get("length"));
-		rowContents.put("spaceConsumed", ""+dataMap.get("length"));
+		rowContents.put("spaceConsumed", ""+dataMap.get("spaceConsumed"));
 		return rowContents;
 	}
 	
 	public Map<String, String> genQuotaInfoStepRowData(Map<Map, Object> dataMap) {
 		Map<String, String> rowContents = new HashMap<String, String>();
 		rowContents.put("sizeUsed", ""+dataMap.get("length"));
-		rowContents.put("spaceConsumed", ""+dataMap.get("length"));
+		rowContents.put("spaceConsumed", ""+dataMap.get("spaceConsumed"));
 		rowContents.put("spaceQuota", ""+dataMap.get("spaceQuota"));
 		return rowContents;
 	}
