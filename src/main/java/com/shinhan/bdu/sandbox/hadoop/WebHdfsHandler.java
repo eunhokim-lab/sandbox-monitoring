@@ -54,20 +54,17 @@ public class WebHdfsHandler {
 		return lists;
 	}
 	
-	public Map<Map, Object> getContSmry(String url, String op, String user) {
+	public Map<String, Object> getContSmry(String url, String op, String user) {
 		assertInput(url, op, user);
 		logger.debug("[ webHdfs::getListStatus ] : {}, {}, {}", url, op, user);
 		HttpClient hc = new HttpClient();
 		Map<String, String> infoParams = makeHdfsParam(op, user);
 		String infoText = hc.get(url, null, infoParams);
-		Map<Map, Object> infos =((Map<Map, Object>) JsonUtil.getMapFeomJsonString(infoText)
+		Map<String, Object> infos =((Map<String, Object>) JsonUtil.getMapFeomJsonString(infoText)
                 											.get("ContentSummary"));
-		
-		
 		
 		assertWebHdfsReturnData(infos, infos.size(), url, infoParams);
 		return infos;
 	}
-	
 	
 }

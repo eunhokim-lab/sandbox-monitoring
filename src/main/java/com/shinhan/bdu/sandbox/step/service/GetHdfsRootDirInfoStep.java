@@ -37,9 +37,9 @@ public class GetHdfsRootDirInfoStep extends GetHdfsDataStepImpl {
 		// 1-2. GET HDFS root Dir information
 		for(Map<String, String> dir : rootDirs) {
 			String dirName = dir.get("pathSuffix");
-			Map<Map, Object> infoMap = wh.getContSmry( String.format(config.get("url.root.dir.info"), dirName)
-												                   , config.get("op.root.dir.info")
-												                   , config.get("user.root.dir.info"));
+			Map<String, Object> infoMap = wh.getContSmry( String.format(config.get("url.root.dir.info"), dirName)
+												                      , config.get("op.root.dir.info")
+												                      , config.get("user.root.dir.info"));
 			infoMaps.put(dirName.replace(".db", ""), rp.genInfoStepRowData(infoMap));
 		} 
 		

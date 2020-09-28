@@ -43,14 +43,16 @@ public class InsertDbSandboxStep extends InsertDbAccessStepImpl {
 			String[] keyArr = key.split(StaticValues.KEY_OFFSET);
 			rowData.add(keyArr[0]); // Sandbox
 			rowData.add(keyArr[1]); // Table
-			if(preData.get(key).size() < 3) {
+			if(preData.get(key).size() < 4) {
 				rowData.add(preData.get(key).get("sizeUsed"));
 				rowData.add(preData.get(key).get("spaceConsumed"));
+				rowData.add(preData.get(key).get("modTime"));
 				rowData.add("0");
 				rowData.add("");
 			} else {
 				rowData.add(preData.get(key).get("sizeUsed"));
 				rowData.add(preData.get(key).get("spaceConsumed"));
+				rowData.add(preData.get(key).get("modTime"));
 				rowData.add(preData.get(key).get("useCount"));
 				rowData.add(preData.get(key).get("lastDataUseTime"));
 			}

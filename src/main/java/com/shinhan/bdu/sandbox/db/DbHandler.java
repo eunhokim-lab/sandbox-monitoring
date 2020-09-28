@@ -118,6 +118,8 @@ public class DbHandler {
 			setDbLong(pstmt, Long.parseLong(data), index);
 		else if (type.toLowerCase().equals("time") || type.toLowerCase().equals("datetime")) 
 			setTimestamp(pstmt, cvtStrigToTimeStamp(data), index);
+		else if (type.toLowerCase().equals("unixtime")) 
+			setTimestamp(pstmt, cvtUnixTimeToTimeStamp(data), index);
 		else
 			throw new SQLException();
 			
@@ -171,5 +173,17 @@ public class DbHandler {
 		return new java.sql.Date(myDate.getTime());
 		
 	}
+	
+	private java.sql.Timestamp cvtUnixTimeToTimeStamp(String time) throws ParseException{
+		if (time == null || time.length() < 1 )
+			return null;
+		long timestamp = Long.parseLong(time);
+		Date date = new java.util.Date(timestamp);
+		SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Date formattedDate = sdf.parse(sdf.format(date));
+
+		return new java.sql.Timestamp(formattedDate.getTime());
+	}
+	
 	
 }

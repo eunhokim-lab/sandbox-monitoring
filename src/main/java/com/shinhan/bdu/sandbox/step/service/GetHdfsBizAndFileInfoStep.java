@@ -35,18 +35,18 @@ public class GetHdfsBizAndFileInfoStep extends GetHdfsDataStepImpl {
 		// 1-2. GET Biz Database Info 
 		for(Map<String, String> bizDb : bizDbs) {
 			String dbName = bizDb.get("pathSuffix");
-			Map<Map, Object> infoMap = wh.getContSmry( String.format(config.get("url.biz.info"), dbName)
+			Map<String, Object> infoMap = wh.getContSmry( String.format(config.get("url.biz.info"), dbName)
 									                 , config.get("op.biz.info")
 									                 , config.get("user.biz.info"));
 			infoMaps.put(dbName.replace(".db", ""), rp.genInfoStepRowData(infoMap));
 		} 
 		// 2. GET other File info
-		Map<Map, Object> otherInfoMap = wh.getContSmry( config.get("url.other.file.info")
+		Map<String, Object> otherInfoMap = wh.getContSmry( config.get("url.other.file.info")
 										              , config.get("op.other.file.info")
 										              , config.get("user.other.file.info"));
 		infoMaps.put("otherFileArea", rp.genInfoStepRowData(otherInfoMap));
 		// 3. GET Sandbox File info
-		Map<Map, Object> sandboxInfoMap = wh.getContSmry( config.get("url.sandbox.file.info")
+		Map<String, Object> sandboxInfoMap = wh.getContSmry( config.get("url.sandbox.file.info")
 								                 , config.get("op.sandbox.file.info")
 								                 , config.get("user.sandbox.file.info"));
 		infoMaps.put("sandboxFileArea", rp.genInfoStepRowData(sandboxInfoMap));

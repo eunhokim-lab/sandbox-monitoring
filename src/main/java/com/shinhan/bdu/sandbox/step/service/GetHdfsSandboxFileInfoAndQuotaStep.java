@@ -42,9 +42,9 @@ public class GetHdfsSandboxFileInfoAndQuotaStep extends GetHdfsDataStepImpl {
 		// 2. GET Table List
 		for(Map<String, String> sandbox : sandboxes) {
 			String sandBoxName = sandbox.get("pathSuffix");
-			Map<Map, Object> infoQuotaMap = wh.getContSmry( String.format(config.get("url.sandbox.file.detail.info"), sandBoxName)
-										                    , config.get("op.sandbox.file.detail.info")
-										                    , config.get("user.sandbox.file.detail.info"));
+			Map<String, Object> infoQuotaMap = wh.getContSmry( String.format(config.get("url.sandbox.file.detail.info"), sandBoxName)
+										                                   , config.get("op.sandbox.file.detail.info")
+										                                   , config.get("user.sandbox.file.detail.info"));
 			infoMaps.put(sandBoxName.replace(".db", ""), rp.genQuotaInfoStepRowData(infoQuotaMap));
 		} 
 		logger.info("***  Sandbox File Info : get " + infoMaps.size() + " item's data");

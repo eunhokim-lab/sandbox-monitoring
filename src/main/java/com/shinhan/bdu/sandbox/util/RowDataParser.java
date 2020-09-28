@@ -7,14 +7,16 @@ import org.apache.hadoop.fs.QuotaUsage;
 
 public class RowDataParser {
 	
-	public Map<String, String> genInfoStepRowData(Map<Map, Object> dataMap) {
+	public Map<String, String> genInfoStepRowData(Map<String, Object> dataMap) {
 		Map<String, String> rowContents = new HashMap<String, String>();
 		rowContents.put("sizeUsed", ""+dataMap.get("length"));
 		rowContents.put("spaceConsumed", ""+dataMap.get("spaceConsumed"));
+		if(dataMap.containsKey("modTime"))
+			rowContents.put("modTime", ""+dataMap.get("modTime"));
 		return rowContents;
 	}
 	
-	public Map<String, String> genQuotaInfoStepRowData(Map<Map, Object> dataMap) {
+	public Map<String, String> genQuotaInfoStepRowData(Map<String, Object> dataMap) {
 		Map<String, String> rowContents = new HashMap<String, String>();
 		rowContents.put("sizeUsed", ""+dataMap.get("length"));
 		rowContents.put("spaceConsumed", ""+dataMap.get("spaceConsumed"));

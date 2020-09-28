@@ -42,18 +42,27 @@ public class GetHdfsSandboxDbInfoStep extends GetHdfsDataStepImpl {
 		for(Map<String, String> sandbox : sandboxes) {
 			String sandBoxName = sandbox.get("pathSuffix");
 			List<Map<String, String>> tables = wh.getListStatus( String.format(config.get("url.table.list"), sandBoxName)
-											                   , config.get("op.table.list")
-											                   , config.get("user.table.list"));
-			// 3. GET Table Info (use size, system size)
+														                     , config.get("op.table.list")
+														                     , config.get("user.table.list"));
+			// 3. GET Table Info
 			for(Map<String, String> table : tables) {
 				String tableName = table.get("pathSuffix");
-				Map<Map, Object> infoMap = wh.getContSmry( String.format(config.get("url.table.info"), sandBoxName, tableName)
+				
+				// 3.1 Info #1 (use size, system size)
+				Map<String, Object> infoMap = wh.getContSmry( String.format(config.get("url.table.info"), sandBoxName, tableName)
 														               , config.get("op.table.info")
 														               , config.get("user.table.info"));
+				// 3.2 Info #2 (accessTime : table create time)
+				infoMap.put("modTime", (Object)table.get("modificationTime"));
+				
 				Map<String, Map<String, String>> rowMap = new HashMap<String, Map<String, String>>();
 				String key = sandBoxName.replace(".db", "") + StaticValues.KEY_OFFSET + tableName;
 				rowMap.put(key, rp.genInfoStepRowData(infoMap));
 				infoMaps.add(rowMap);
+				
+				List<Map<String, String>> dirMetas = wh.getListStatus( String.format(config.get("url.table.list"), sandBoxName)
+																                   , config.get("op.table.list")
+																                   , config.get("user.table.list"));
 			}
 		} 
 		logger.info("***  Sandbox DB info : get " + infoMaps.size() + " item's data");
